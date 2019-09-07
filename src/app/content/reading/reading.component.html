@@ -19,9 +19,16 @@
     <div>
         <input type="text" [(ngModel)]="addInfo.title">
         <textarea [(ngModel)]="addInfo.evaluation" name="" id="inputStr" cols="30" rows="10"></textarea>
-        <input type="date" [(ngModel)]="addInfo.reading_at">
+        <div class="devui-input-group mtb-20">
+            <input class="devui-input" placeholder="yyyy-MM-dd" (focus)="datePicker1.toggle($event)" name="dp"
+            [(ngModel)]="addInfo.reading_at" autocomplete="off" dDatepicker #datePicker1="datepicker"
+            (selectedDateChange)="getValue($event)" appendToBody>
+            <div class="devui-input-group-addon" (click)="datePicker1.toggle($event)">
+                <i class="icon icon-calendar"></i>
+            </div>
+        </div>
     </div>
-    <sd-button type="default" (click)="publishReading()">保存</sd-button>
-    <sd-button class="ml-20" type="default" (click)="publishReading()">确定</sd-button>
+    <d-button (click)="publishReading()">保存</d-button>
+    <d-button class="ml-20" bsStyle="common" (click)="publishReading()">确定</d-button>
   </div>
 </div>

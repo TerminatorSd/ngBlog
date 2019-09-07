@@ -5,7 +5,7 @@ import { ReadingService } from 'src/app/service/reading.service';
 @Component({
   selector: 'app-reading',
   templateUrl: './reading.component.html',
-  styleUrls: ['./reading.component.less']
+  styleUrls: ['./reading.component.scss']
 })
 export class ReadingComponent implements OnInit {
   private inputStr: string;
