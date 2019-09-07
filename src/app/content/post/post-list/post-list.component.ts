@@ -4,11 +4,11 @@ import { PostService } from '../post.service';
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.less']
+  styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
 
-  private postsList: any;
+  private postsList: [];
 
   constructor(private postService: PostService) { }
 
@@ -17,7 +17,7 @@ export class PostListComponent implements OnInit {
   }
 
   getPostList() {
-    this.postService.getList()
+    this.postService.fetchList()
       .subscribe(res => {
         if (res.code === 0) {
           this.postsList = res.data;

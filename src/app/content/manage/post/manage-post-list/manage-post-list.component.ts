@@ -10,7 +10,7 @@ import { MessageService } from 'src/app/service/message.service';
 export class ManagePostListComponent implements OnInit {
 
   private postsList: any;
-  private alertVar: Object = {
+  private alertVar: object = {
     show: false,
     text: 'alert',
     type: 'success'

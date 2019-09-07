@@ -17,7 +17,7 @@ export class PostService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
-  getList (): Observable<any> {
+  fetchList(): Observable<any> {
     return this.http.get<any>(`${this.domain}/posts/list`)
       .pipe(
         tap(res => this.log('fetched list')),

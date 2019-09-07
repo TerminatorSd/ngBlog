@@ -12,7 +12,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { PostListComponent } from './content/post/post-list/post-list.component';
-import { SinglePostComponent } from './content/post/post-list/single-post/single-post.component';
 import { PostDetailComponent } from './content/post/post-detail/post-detail.component';
 import { ReadingComponent } from './content/reading/reading.component';
 import { AboutComponent } from './content/about/about.component';
@@ -27,7 +26,6 @@ import { AlertComponent } from './basic/alert/alert.component';
     FooterComponent,
     ContentComponent,
     PostListComponent,
-    SinglePostComponent,
     PostDetailComponent,
     ReadingComponent,
     AboutComponent,

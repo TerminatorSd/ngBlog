@@ -1,5 +1,21 @@
 <div>
-  <div *ngFor="let item of postsList">
-    <app-single-post [post]="item"></app-single-post>
+  <div *ngFor="let post of postsList">
+    <div class="post">
+      <section class="header">
+        <span class="meta-info">{{ post.created_at * 1000 | date: 'fullDate' }} {{ post.label }}</span>
+        <span class="title">
+          <a [routerLink]="['/post/detail', post._id]">{{ post.title }}</a>
+        </span>
+      </section>
+      <section class="content clearfix">
+        <a href="" class="img">
+          <img src="{{ post.feature_image }}" alt="{{ post.feature_image }}">
+        </a>
+        <span class="text">{{ post.abbr }}</span>
+        <div class="more">
+          <a href="/post/list" class="read-more">Read more ></a>
+        </div>
+      </section>
+    </div>
   </div>
 </div>

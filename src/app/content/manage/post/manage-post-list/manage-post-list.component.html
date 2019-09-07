@@ -1,7 +1,6 @@
 <div class="container">
   <div class="mpl-header">
-    <d-button bsStyle="primary">确认</d-button>
-    <sd-button typp="default" [routerLink]="['/manage/detail', 0]">新增</sd-button>
+    <d-button typp="default" [routerLink]="['/manage/detail', 0]">新增</d-button>
   </div>
   <div *ngFor="let item of postsList" class="item clearfix">
     <div class="left">
@@ -10,7 +9,7 @@
       <span class="label">{{ item.label }}</span>
     </div>
     <div class="right">
-      <sd-button type="default" [routerLink]="['/manage/detail', item._id]">查看</sd-button>
+      <sd-button type="default" [routerLink]="['/manage/detail', item._id]">编辑</sd-button>
       <sd-button type="danger" class="ml-20" (click)="deletePost(item._id)">删除</sd-button>
     </div>
   </div>
