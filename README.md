@@ -1,6 +1,6 @@
 # NgBlog => Try to know more things about Angular and DevUI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.  
 The UI component is from [DevUI](https://devui.design) version 7.0.0.
 
 ## Cmds used to use

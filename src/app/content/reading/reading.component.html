@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="rd-content">
+    <div *ngFor="let item of readingList" class="rd-item clearfix">
+      <img src="../../../assets//images/qiaoba.jpg" alt="">
+      <div class="rd-right-content">
+        <div class="rd-header">
+          <span class="title">{{ item.title }}</span>
+        </div>
+        <div class="rd-body">
+          {{ item.evaluation }}
+        </div>
+        <div class="rd-footer">
+          <span class="time">Reading at {{ item.reading_at * 1000 | date: 'fullDate'}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rd-add-new">
+    <div>
+        <input type="text" [(ngModel)]="addInfo.title">
+        <textarea [(ngModel)]="addInfo.evaluation" name="" id="inputStr" cols="30" rows="10"></textarea>
+        <input type="date" [(ngModel)]="addInfo.reading_at">
+    </div>
+    <sd-button type="default" (click)="publishReading()">保存</sd-button>
+    <sd-button class="ml-20" type="default" (click)="publishReading()">确定</sd-button>
+  </div>
+</div>

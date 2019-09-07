@@ -1,0 +1,34 @@
+<!--
+@author shaoDong
+@email scut_sd@163.com
+@create date 2018-08-25 09:31:31
+@modify date 2018-08-25 09:31:31
+@desc manage post detail
+-->
+
+<div *ngIf="postInfo" class="container">
+  <div class="mpd-header">
+    <input [(ngModel)]="postInfo.title" placeholder="title">
+    <select name="" id="" [(ngModel)]="postInfo.label">
+      <option value="Travel">Travel</option>
+      <option value="Life">Life</option>
+      <option value="Skill">Skill</option>
+      <option value="Practice">Practice</option>
+    </select>
+    <sd-button *ngIf="!newFlag" class="fr" type="default" (click)="updateBlog()">更新</sd-button>
+    <sd-button *ngIf="newFlag" class="fr" type="default" (click)="addNewBlog()">发布</sd-button>
+  </div>
+  <!-- <img class="photo photo-img" src=""> -->
+  <form id="img_form" action="" method="POST" enctype="multipart/form-data">
+    <input name="img" type="file" id="img-input" (change)="uploadImg($event)"/>
+  </form>
+
+  <div class="mpd-content">
+    <textarea [(ngModel)]="postInfo.markdown" name="" id="markdown" cols="30" rows="10">{{ postInfo.markdown }}</textarea>
+    <div class="html" [innerHTML]="postInfo.html"></div>
+  </div>
+  <div class="mpd-footer">
+    
+  </div>
+  <sd-alert [hidden]="!alertVar.show" [text]="alertVar.text" [type]="alertVar.type"></sd-alert>
+</div>

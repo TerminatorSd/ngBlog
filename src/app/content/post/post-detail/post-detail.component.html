@@ -1,0 +1,8 @@
+<div class="article" *ngIf="postContent">
+  <div class="pd-header">
+    <div class="date">{{ postContent.created_at * 1000 | date: 'fullDate' }} / {{ postContent.label | uppercase }}</div>
+    <div class="title">{{ postContent.title }}</div>
+    <img src="../../../../assets/images/qiaoba.jpg" alt="">
+  </div>
+  <div class="pd-content" [innerHTML]="postContent.html"></div>
+</div>

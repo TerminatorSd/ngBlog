@@ -1,0 +1,96 @@
+/**
+ * @author shaoDong
+ * @email scut_sd@163.com
+ * @create date 2018-08-16 11:20:50
+ * @modify date 2018-08-16 11:20:50
+ * @desc less
+*/
+.post {
+  position: relative;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto 1rem auto;
+  padding-bottom: 1rem;
+  border-bottom: #EBF2F6 .125rem solid;
+  word-break: break-word;
+  hyphens: auto;
+  &:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: .125rem solid #ddd;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #fff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: #fff 0 0 0 5px;
+  }
+  .header {
+    .meta-info {
+      display: inline-block;
+      margin: 0 0 5px;
+      font-family: 'Open Sans',sans-serif;
+      font-size: .7rem;
+      color: #999999;
+    }
+    .title {
+      display: block;
+      margin: .125rem 0 .425rem 0;
+      font-size: 2rem;
+      a {
+        color: #3079C1;
+      }
+    }
+  }
+  .content {
+    font-size: .8rem;
+    .img {
+      float: right;
+      margin: .25rem 0 .25rem .55rem;
+      width: 45%;
+      border: .125rem solid #ddd;
+      padding: .125rem;
+      border-radius: .075rem;
+      background: #f9f9f9;
+      img {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+      }
+    }
+    .text {
+      color: #565656;
+      font-size: .9rem;
+    }
+    .more {
+      clear: both;
+      .read-more {
+        float: right;
+        font-size: .8rem;
+        line-height: 1.1rem;
+        color: #4a4a4a;
+        border-bottom: .0025rem solid #5cadff;
+      }
+    }
+  }
+}
+
+/* media screen */
+@media only screen and (max-width: 500px) {
+  .content {
+    .img {
+      display: block;
+      float: none;
+      margin: .25rem auto;
+      width: auto;
+      border: 0 none;
+      padding: 0;
+    }
+  }
+}
