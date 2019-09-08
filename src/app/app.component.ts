@@ -10,6 +10,6 @@ export class AppComponent implements OnInit {
   title = 'ngBlog';
 
   ngOnInit() {
-    this.msgs = [{ severity: 'success', summary: '摘要', detail: '测试换行，测试换行，测试换行' }];
+    // this.msgs = [{ severity: 'success', summary: '摘要', detail: '测试换行，测试换行，测试换行' }];
   }
 }
