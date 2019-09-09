@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventEmitterService } from './service/event-emitter.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,15 @@ export class AppComponent implements OnInit {
   msgs = [];
   title = 'ngBlog';
 
+  constructor(private eventEmitterService: EventEmitterService) {}
+
   ngOnInit() {
-    // this.msgs = [{ severity: 'success', summary: '摘要', detail: '测试换行，测试换行，测试换行' }];
+    this.eventEmitterService.eventEmit.subscribe((value: any) => {
+      if (value) {
+        const { severity, summary, detail } = value;
+        this.msgs = [{ severity, summary, detail, life: 2000 }];
+      }
+    });
+
   }
 }

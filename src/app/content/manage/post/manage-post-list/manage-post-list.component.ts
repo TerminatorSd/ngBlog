@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/service/post.service';
 import { MessageService } from 'src/app/service/message.service';
+import { EventEmitterService } from 'src/app/service/event-emitter.service';
 
 @Component({
   selector: 'app-manage-post-list',
@@ -16,7 +17,8 @@ export class ManagePostListComponent implements OnInit {
     type: 'success'
   };
 
-  constructor(private postService: PostService, private messageService: MessageService) { }
+  constructor(private postService: PostService, private messageService: MessageService,
+              private eventEmitterService: EventEmitterService) { }
 
   ngOnInit() {
     this.getPostList();
@@ -37,10 +39,13 @@ export class ManagePostListComponent implements OnInit {
     this.postService.deletePost(id)
       .subscribe(res => {
         if (res.code === 0) {
-          this.messageService.showAlert(this, '删除成功~', 'success');
           this.getPostList();
         } else {
-          this.messageService.showAlert(this, '删除失败!', 'error');
+          this.eventEmitterService.eventEmit.emit({
+            severity: 'error',
+            summary: '提示',
+            detail: '删除失败'
+          });
         }
       });
   }
