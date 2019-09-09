@@ -23,7 +23,7 @@ export class ManagePostDetailComponent implements OnInit {
   private postId: any;
   private postInfo: Post;
   private inputMarkdown: string;
-  private alertVar: Object = {
+  private alertVar: object = {
     show: false,
     text: 'alert',
     type: 'success'
