@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DevUIModule } from 'ng-devui';
-import { EchartsModule } from 'echarts';
+// import { EchartsModule } from 'echarts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,7 +45,7 @@ import { AlertComponent } from './basic/alert/alert.component';
     HttpClientModule,
     DevUIModule,
     AppRoutingModule,
-    EchartsModule
+    // EchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

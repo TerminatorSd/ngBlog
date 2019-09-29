@@ -11,18 +11,35 @@ import { DashboardComponent } from './content/dashboard/dashboard.component';
 
 
 const routes: Routes = [
-  { path: '', component: PostListComponent },
-  { path: 'post/list', component: PostListComponent },
-  { path: 'post/detail/:id', component: PostDetailComponent },
-  { path: 'reading', component: ReadingComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'manage/list', component: ManagePostListComponent },
-  { path: 'manage/detail/:id', component: ManagePostDetailComponent },
-  { path: 'dashboard', component: DashboardComponent },
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'post',
+    },
+    {
+        path: 'post',
+        children: [{
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'list'
+        }, {
+            path: 'list',
+            component: PostListComponent
+        }, {
+            path: 'detail/:id',
+            component: PostDetailComponent
+        }]
+    },
+    // { path: 'post/detail/:id', component: PostDetailComponent },
+    { path: 'reading', component: ReadingComponent },
+    { path: 'about', component: AboutComponent },
+    { path: 'manage/list', component: ManagePostListComponent },
+    { path: 'manage/detail/:id', component: ManagePostDetailComponent },
+    { path: 'dashboard', component: DashboardComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

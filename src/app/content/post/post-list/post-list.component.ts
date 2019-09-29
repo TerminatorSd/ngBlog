@@ -1,29 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-post-list',
-  templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.scss']
+    selector: 'app-post-list',
+    templateUrl: './post-list.component.html',
+    styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
 
-  private postsList: [];
+    private postsList: [];
 
-  constructor(private postService: PostService) { }
+    constructor(private postService: PostService) { }
 
-  ngOnInit() {
-    this.getPostList();
-  }
+    ngOnInit() {
+        this.getPostList();
+    }
 
-  getPostList() {
-    this.postService.fetchList()
-      .subscribe(res => {
-        if (res.code === 0) {
-          this.postsList = res.data;
-        } else {
-          console.log('get post list failed');
-        }
-      });
-  }
+    getPostList() {
+        this.postService.fetchList()
+            .subscribe(res => {
+                if (res.code === 0) {
+                    this.postsList = res.data;
+                } else {
+                    console.log('get post list failed');
+                }
+            });
+    }
 }

@@ -21,6 +21,8 @@ export class AboutComponent implements OnInit {
         }]
     };
 
+    size = '180px';
+
     constructor() { }
 
     ngOnInit() {
